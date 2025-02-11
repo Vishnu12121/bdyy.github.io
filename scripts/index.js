@@ -248,6 +248,12 @@ x = setInterval(function() {
 
         if (this.tick2 >= this.circleFadeTime) this.circleFading = false;
       } else {
+        ctx.fillStyle           .replace('alp', 1 - armonic);
+        ctx.arc(this.x, this.y, this.circleFinalSize, 0, Tau);
+        ctx.fill();
+
+        if (this.tick2 >= this.circleFadeTime) this.circleFading = false;
+      } else {
         ctx.fillStyle = this.lightColor.replace('light', 70);
         ctx.fillText(this.char, this.x + this.dx, this.y + this.dy);
       }
@@ -263,7 +269,6 @@ x = setInterval(function() {
 
       if (this.tick > opts.letterContemplatingWaitTime) {
         this.phase = 'balloon';
-
         this.tick = 0;
         this.spawning = true;
         this.spawnTime = (opts.balloonSpawnTime * Math.random()) | 0;
@@ -364,6 +369,7 @@ x = setInterval(function() {
     this.size =
       opts.fireworkShardBaseSize + opts.fireworkShardAddedSize * Math.random();
   }
+
   Shard.prototype.step = function() {
     this.x += this.vx;
     this.y += this.vy += opts.gravity;
@@ -483,7 +489,6 @@ x = setInterval(function() {
       }
       setTimeout(openBox, stepMinutes[step - 1]);
       step++;
-      //   setTimeout(anim, 1900);
     }
 
     function showfireworks() {
@@ -493,9 +498,5 @@ x = setInterval(function() {
 
     init();
   }
-
-  // if (distance < 0) {
-  //     clearInterval(x);
-  //     console.log("happy birthday");
-  // }
-}, second);
+}, second); this.lightColor.replace
+        
